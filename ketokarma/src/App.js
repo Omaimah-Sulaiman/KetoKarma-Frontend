@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React from 'react';
+import Recipes from './component/recipes';
+import recipeData from './recipe-data/recipe.json';
+import Header from './Header';
+import Footer from './Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     info: Data,
+  //     showModel: false,
+  //     selectedBeast: {},
+  //   };
+  // }
+
+  // displayModal = (select) => {
+  //   this.setState({
+  //     showModel: true,
+  //     selectedBeast: select,
+  //   });
+  // };
+  // closeModal = () => {
+  //   this.setState({
+  //     showModel: false,
+  //   });
+  // };
+
+  render() {
+    return (
+      <div>
+       {/* {console.log(recipeData[0].name)} */}
+        <Recipes
+        recipeData={recipeData}
+      
+        />
+     </div>
+    );
+  }
 }
 
 export default App;
